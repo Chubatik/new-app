@@ -2,9 +2,9 @@ import React, {useState, useMemo} from 'react';
 import './styles/App.css';
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
-import MySelect from "./components/UI/select/MySelect";
-import MyInput from "./components/UI/input/MyInput";
 import PostFilter from "./components/PostFilter";
+import MyModal from "./components/UI/modal/MyModal";
+import MyButton from "./components/UI/button/MyButton";
 const App = () => {
 
     const [posts, setPosts] = useState([
@@ -16,20 +16,24 @@ const App = () => {
 
     const [filter, setFilter] = useState({sort: '', query: ''});
 
+    const [modal, setModal] = useState(false);
+
     const sortedPosts = useMemo(() => {
-        console.log('sort posts')
         if (filter.sort) {
-            return [...posts].sort((a,b ) => a[filter.sort].localeCompare(b[filter.sort]));
+            return [...posts]
+                .sort((a,b ) => a[filter.sort].localeCompare(b[filter.sort]));
         }
         return posts
     }, [filter.sort, posts]);
 
     const sortedAndSearchedPosts = useMemo(() => {
-        return sortedPosts.filter(post => post.title.toLowerCase().includes(filter.query));
+        return sortedPosts
+            .filter(post => post.title.toLowerCase().includes(filter.query));
     }, [filter.query, sortedPosts]);
 
     const createPost = (newPost) => {
         setPosts([...posts, newPost]);
+        setModal(false);
     }
 
     const removePost = (post) => {
@@ -38,18 +42,24 @@ const App = () => {
 
   return (
     <div className={'App'}>
-        <div>
+        <MyButton style={{marginTop: '30px'}}
+                  onClick={() => setModal(true)}>
+            Create post
+        </MyButton>
+
+        <MyModal visible={modal}
+                 setVisible={setModal}>
             <PostForm create={createPost}/>
-            <br style={{margin: '15px'}}/>
-            <PostFilter filter={filter} setFilter={setFilter}/>
-        </div>
-        {
-            sortedAndSearchedPosts.length !== 0
-            ? <PostList posts={sortedAndSearchedPosts} remove={removePost}/>
-            : <h1 style={{textAlign: 'center'}}>Posts weren't found</h1>
 
-        }
+        </MyModal>
 
+        <br style={{margin: '15px'}}/>
+
+        <PostFilter filter={filter}
+                    setFilter={setFilter}/>
+
+        <PostList posts={sortedAndSearchedPosts}
+                  remove={removePost}/>
     </div>
   );
 }
