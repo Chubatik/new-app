@@ -6,3 +6,12 @@
     border: darkgray 1px solid;
     cursor: pointer;
 }
+
+.current-page {
+    padding: 5px 15px;
+    color: black;
+    font-size: 18px;
+    background: red;
+    border: black 1px solid;
+    cursor: pointer;
+}
