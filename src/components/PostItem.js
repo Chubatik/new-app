@@ -2,7 +2,7 @@ import React from 'react'
 
 import MyButton from './UI/button/MyButton'
 
-const PostItem = ({ num, post, remove }) => {
+const PostItem = ({ post, remove }) => {
   return (
     <div className={'post'}>
       <div className={'post-content'}>
