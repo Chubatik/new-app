@@ -13,7 +13,7 @@ const App = () => {
           <Route path={'/about'}>
               <About/>
           </Route>
-          <Route path={'/posts'}>
+          <Route exact path={'/posts'}>
               <Posts />
           </Route>
       </HashRouter>
