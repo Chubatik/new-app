@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Chubatik/new-app/static/css/main.8463e2de.chunk.css",
-    "main.js": "/Chubatik/new-app/static/js/main.b5468c36.chunk.js",
-    "main.js.map": "/Chubatik/new-app/static/js/main.b5468c36.chunk.js.map",
+    "main.js": "/Chubatik/new-app/static/js/main.85f29497.chunk.js",
+    "main.js.map": "/Chubatik/new-app/static/js/main.85f29497.chunk.js.map",
     "runtime-main.js": "/Chubatik/new-app/static/js/runtime-main.ff8ba9f5.js",
     "runtime-main.js.map": "/Chubatik/new-app/static/js/runtime-main.ff8ba9f5.js.map",
     "static/js/2.fd457592.chunk.js": "/Chubatik/new-app/static/js/2.fd457592.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.ff8ba9f5.js",
     "static/js/2.fd457592.chunk.js",
     "static/css/main.8463e2de.chunk.css",
-    "static/js/main.b5468c36.chunk.js"
+    "static/js/main.85f29497.chunk.js"
   ]
 }
