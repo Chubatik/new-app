@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Chubatik/new-app/posts/static/css/main.8463e2de.chunk.css",
-    "main.js": "/Chubatik/new-app/posts/static/js/main.85f29497.chunk.js",
-    "main.js.map": "/Chubatik/new-app/posts/static/js/main.85f29497.chunk.js.map",
-    "runtime-main.js": "/Chubatik/new-app/posts/static/js/runtime-main.a6745959.js",
-    "runtime-main.js.map": "/Chubatik/new-app/posts/static/js/runtime-main.a6745959.js.map",
-    "static/js/2.fd457592.chunk.js": "/Chubatik/new-app/posts/static/js/2.fd457592.chunk.js",
-    "static/js/2.fd457592.chunk.js.map": "/Chubatik/new-app/posts/static/js/2.fd457592.chunk.js.map",
-    "index.html": "/Chubatik/new-app/posts/index.html",
-    "static/css/main.8463e2de.chunk.css.map": "/Chubatik/new-app/posts/static/css/main.8463e2de.chunk.css.map",
-    "static/js/2.fd457592.chunk.js.LICENSE.txt": "/Chubatik/new-app/posts/static/js/2.fd457592.chunk.js.LICENSE.txt"
+    "main.css": "./static/css/main.8463e2de.chunk.css",
+    "main.js": "./static/js/main.85f29497.chunk.js",
+    "main.js.map": "./static/js/main.85f29497.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.612ab4f6.js",
+    "runtime-main.js.map": "./static/js/runtime-main.612ab4f6.js.map",
+    "static/js/2.fd457592.chunk.js": "./static/js/2.fd457592.chunk.js",
+    "static/js/2.fd457592.chunk.js.map": "./static/js/2.fd457592.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.8463e2de.chunk.css.map": "./static/css/main.8463e2de.chunk.css.map",
+    "static/js/2.fd457592.chunk.js.LICENSE.txt": "./static/js/2.fd457592.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a6745959.js",
+    "static/js/runtime-main.612ab4f6.js",
     "static/js/2.fd457592.chunk.js",
     "static/css/main.8463e2de.chunk.css",
     "static/js/main.85f29497.chunk.js"
