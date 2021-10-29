@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Chubatik/new-app/static/css/main.8463e2de.chunk.css",
+    "main.js": "/Chubatik/new-app/static/js/main.b5468c36.chunk.js",
+    "main.js.map": "/Chubatik/new-app/static/js/main.b5468c36.chunk.js.map",
+    "runtime-main.js": "/Chubatik/new-app/static/js/runtime-main.ff8ba9f5.js",
+    "runtime-main.js.map": "/Chubatik/new-app/static/js/runtime-main.ff8ba9f5.js.map",
+    "static/js/2.fd457592.chunk.js": "/Chubatik/new-app/static/js/2.fd457592.chunk.js",
+    "static/js/2.fd457592.chunk.js.map": "/Chubatik/new-app/static/js/2.fd457592.chunk.js.map",
+    "index.html": "/Chubatik/new-app/index.html",
+    "static/css/main.8463e2de.chunk.css.map": "/Chubatik/new-app/static/css/main.8463e2de.chunk.css.map",
+    "static/js/2.fd457592.chunk.js.LICENSE.txt": "/Chubatik/new-app/static/js/2.fd457592.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ff8ba9f5.js",
+    "static/js/2.fd457592.chunk.js",
+    "static/css/main.8463e2de.chunk.css",
+    "static/js/main.b5468c36.chunk.js"
+  ]
+}
