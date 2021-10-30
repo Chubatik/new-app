@@ -31,7 +31,7 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: ssh $SSH_USER@$SSH_HOST
+      - run: ssh 92:61:c7:62:9b:e6:40:0f:9f:91:a3:69:08:19:72:fe@chubatik.github.io
       - run: npm run deploy
 
 workflows:
