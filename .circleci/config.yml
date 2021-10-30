@@ -20,16 +20,19 @@ jobs:
     docker:
       - image: node:latest
     steps:
+      - run: npm install
       - run: npm run test
   build-job:
     docker:
       - image: node:latest
     steps:
+      - run: npm install
       - run: npm run build
   deploy-job:
     docker:
       - image: node:latest
     steps:
+      - run: npm install
       - run: npm run deploy
 
 workflows:
