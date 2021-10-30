@@ -24,19 +24,8 @@ workflows:
   version: 2
   deploy-workflow:
     jobs:
-      - eslint-job
-      - test-job:
-          requires:
-            - eslint-job
-      - build-job:
-          requires:
-            - eslint-job
-            - test-job
+      - build-job
       - deploy-job:
-          requires:
-            - eslint-job
-            - test-job
-            - build-job
           filters:
             branches:
               only: master
