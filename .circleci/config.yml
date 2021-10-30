@@ -47,29 +47,14 @@ workflows:
           requires:
             - eslint-job
             - test-job
-      - hold_1:
-          type: approval
-          requires:
-            - eslint-job
-            - test-job
-            - build-job
-          filters:
-            branches:
-              only: master
-      - hold_2:
-          type: approval
-          requires:
-            - eslint-job
-            - test-job
-            - build-job
-            - hold_1
           filters:
             branches:
               only: master
       - deploy-job:
           requires:
-            - hold_1
-            - hold_2
+            - eslint-job
+            - test-job
+            - build-job
           filters:
             branches:
               only: master
