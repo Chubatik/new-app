@@ -20,7 +20,6 @@ jobs:
                 paths:
                   - node_modules
                 key: v1-dependencies-{{ checksum "package.json" }}
-      - name: "ESLint"
       - run: npm run eslint
 
   test:
@@ -31,7 +30,6 @@ jobs:
 
     steps:
       - checkout
-      - name: "Tests"
       - run: npm run test
 
   build:
@@ -42,7 +40,6 @@ jobs:
 
     steps:
       - checkout
-      - name: "Build"
       - run: npm run build
 
   deploy:
@@ -53,7 +50,6 @@ jobs:
 
     steps:
       - checkout
-      - name: "Deploy"
       - run: npm run deploy
 
 workflows:
