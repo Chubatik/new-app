@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   eslint-job:
     docker:
-      - image: cimg/node:stable
+      - image: node:latest
     working_directory: ~/repo
     steps:
       - checkout
@@ -18,19 +18,19 @@ jobs:
       - run: npm run eslint
   test-job:
     docker:
-      - image: cimg/node:stable
+      - image: node:latest
     working_directory: ~/repo
     steps:
       - run: npm run test
   build-job:
     docker:
-      - image: cimg/node:stable
+      - image: node:latest
     working_directory: ~/repo
     steps:
       - run: npm run build
   deploy-job:
     docker:
-      - image: cimg/node:stable
+      - image: node:latest
     working_directory: ~/repo
     steps:
       - run: npm run deploy
