@@ -31,6 +31,8 @@ jobs:
     steps:
       - checkout
       - run: npm install
+      - run: git config --global user.email "chubatyuk02@gmail.com"
+      - run: git config --global user.name "Chubatik"
       - run: npm run deploy
 
 workflows:
