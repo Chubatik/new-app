@@ -28,13 +28,12 @@ jobs:
     docker:
       - image: node:latest
     working_directory: ~/repo
+    machine:
+      enabled: true
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "92:61:c7:62:9b:e6:40:0f:9f:91:a3:69:08:19:72:fe"
       - checkout
       - run: npm install
-      - run: npm run deploy
+      - run: ssh $SSH_USER@$SSH_HOST npm run deploy
 
 workflows:
   version: 2
