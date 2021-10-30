@@ -45,12 +45,20 @@ workflows:
           requires:
             - eslint-job
             - test-job
-      - hold:
+      - hold_1:
           type: approval
           requires:
             - eslint-job
             - test-job
             - build-job
+      - hold_2:
+          type: approval
+          requires:
+            - eslint-job
+            - test-job
+            - build-job
+            - hold_1
       - deploy-job:
           requires:
-            - hold
+            - hold_1
+            - hold_2
