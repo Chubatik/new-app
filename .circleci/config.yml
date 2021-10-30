@@ -5,6 +5,9 @@ jobs:
       - image: node:latest
     working_directory: ~/repo
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "92:61:c7:62:9b:e6:40:0f:9f:91:a3:69:08:19:72:fe"
       - checkout
       - run: npm install
       - run: npm run build
@@ -13,9 +16,6 @@ jobs:
       - image: node:latest
     working_directory: ~/repo
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "92:61:c7:62:9b:e6:40:0f:9f:91:a3:69:08:19:72:fe"
       - checkout
       - run: npm install
       - run: npm run deploy
@@ -26,6 +26,8 @@ workflows:
     jobs:
       - build-job
       - deploy-job:
+          requires:
+            - build-job
           filters:
             branches:
               only: master
