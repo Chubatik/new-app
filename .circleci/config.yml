@@ -31,7 +31,8 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: ssh $SSH_USER@$SSH_HOST npm run deploy
+      - run: ssh $SSH_USER@$SSH_HOST
+      - run: npm run deploy
 
 workflows:
   version: 2
