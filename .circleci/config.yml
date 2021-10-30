@@ -5,7 +5,6 @@ jobs:
       - image: node:latest
     working_directory: ~/repo
     steps:
-      - checkout
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
@@ -21,21 +20,18 @@ jobs:
       - image: node:latest
     working_directory: ~/repo
     steps:
-      - checkout
       - run: npm run test
     build:
       docker:
         - image: node:latest
       working_directory: ~/repo
       steps:
-        - checkout
         - run: npm run build
     deploy:
       docker:
         - image: node:latest
       working_directory: ~/repo
       steps:
-        - checkout
         - run: npm run deploy
 
 workflows:
