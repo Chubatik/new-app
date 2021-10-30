@@ -28,8 +28,6 @@ jobs:
     docker:
       - image: node:latest
     working_directory: ~/repo
-    machine:
-      enabled: true
     steps:
       - checkout
       - run: npm install
