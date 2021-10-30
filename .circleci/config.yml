@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   eslint:
     docker:
-      - image: node:latest
+      - image: cimg/node:latest
     working_directory: ~/repo
     steps:
       - checkout
