@@ -8,9 +8,6 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run eslint
-      - add_ssh_keys:
-          fingerprints:
-            - "f2:ab:cd:44:62:69:48:63:30:93:b6:f5:cf:cc:9b:fa"
   test-job:
     docker:
       - image: node:latest
@@ -34,6 +31,9 @@ jobs:
     steps:
       - checkout
       - run: npm install
+      - add_ssh_keys:
+          fingerprints:
+            - "f2:ab:cd:44:62:69:48:63:30:93:b6:f5:cf:cc:9b:fa"
       - run: npm run deploy
 
 workflows:
