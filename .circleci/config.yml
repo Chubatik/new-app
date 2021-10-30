@@ -55,3 +55,24 @@ jobs:
       - checkout
       - name: "Deploy"
       - run: npm run deploy
+
+workflows:
+  build_and_test:
+    jobs:
+      - eslint
+      - test:
+          requires:
+            - eslint
+      - build:
+          requires:
+            - eslint
+            - test
+      - hold:
+          type: approval
+          requires:
+            - eslint
+            - test
+            - build
+      - deploy:
+          requires:
+            - hold
