@@ -1,29 +1,27 @@
 version: 2.1
+jobs:
+  eslint:
+    docker:
+      - image: node:latest
 
-build_and_test:
-  jobs:
-    eslint:
-      docker:
-        - image: node:latest
+    working_directory: ~/repo
 
-      working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
 
-      steps:
-        - checkout
-        - restore_cache:
-            keys:
-              - v1-dependencies-{{ checksum "package.json" }}
-              # fallback to using the latest cache if no exact match is found
-              - v1-dependencies-
+            - run: npm install
 
-              - run: npm install
-
-              - save_cache:
-                  paths:
-                    - node_modules
-                  key: v1-dependencies-{{ checksum "package.json" }}
-        - name: "ESLint"
-        - run: npm run eslint
+            - save_cache:
+                paths:
+                  - node_modules
+                key: v1-dependencies-{{ checksum "package.json" }}
+      - name: "ESLint"
+      - run: npm run eslint
 
     test:
       docker:
@@ -59,7 +57,7 @@ build_and_test:
         - run: npm run deploy
 
 workflows:
-  build_and_test:
+  workflow:
     jobs:
       - "ESLint"
       - "Tests":
