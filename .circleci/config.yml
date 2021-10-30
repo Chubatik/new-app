@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  eslint:
+  eslint-job:
     docker:
       - image: cimg/node:stable
     working_directory: ~/repo
@@ -15,44 +15,48 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: npm run eslint
-  test:
+      - name: "ESLint"
+      - command: "npm run eslint"
+  test-job:
     docker:
       - image: cimg/node:stable
     working_directory: ~/repo
     steps:
-      - run: npm run test
+      - name: "Test"
+      - command: "npm run test"
     build:
       docker:
         - image: cimg/node:stable
       working_directory: ~/repo
       steps:
-        - run: npm run build
-    deploy:
+        - name: "Build"
+        - command: "npm run build"
+    deploy-job:
       docker:
         - image: cimg/node:stable
       working_directory: ~/repo
       steps:
-        - run: npm run deploy
+        - name: "Deploy"
+        - command: "npm run deploy"
 
 workflows:
   version: 2
   build-deploy:
     jobs:
-      - eslint
-      - test:
+      - eslint-job
+      - test-job:
           requires:
-            - eslint
-      - build:
+            - eslint-job
+      - build-job:
           requires:
-            - eslint
-            - test
+            - eslint-job
+            - test-job
       - hold:
           type: approval
           requires:
-            - eslint
-            - test
-            - build
-      - deploy:
+            - eslint-job
+            - test-job
+            - build-job
+      - deploy-job:
           requires:
             - hold
