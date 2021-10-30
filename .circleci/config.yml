@@ -5,6 +5,7 @@ jobs:
       - image: node:latest
     working_directory: ~/repo
     steps:
+      - checkout
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
