@@ -19,19 +19,19 @@ jobs:
   test-job:
     docker:
       - image: node:latest
-    working_directory: ~/repo
+    working_directory: ~/repo/package.json
     steps:
       - run: npm run test
   build-job:
     docker:
       - image: node:latest
-    working_directory: ~/repo
+    working_directory: ~/repo/package.json
     steps:
       - run: npm run build
   deploy-job:
     docker:
       - image: node:latest
-    working_directory: ~/repo
+    working_directory: ~/repo/package.json
     steps:
       - run: npm run deploy
 
