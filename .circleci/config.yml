@@ -18,8 +18,8 @@ jobs:
       - run:
           name: "GIT config"
           command: |
-            git config --global user.email "${CIRCLE_USERNAME}@users.noreply.github.com"
-            git config --global user.name "${CIRCLE_USERNAME}"
+            git config --global user.email "chubatyuk02@gmail.com"
+            git config --global user.name "Chubatik"
       - run: npm run deploy
 
 workflows:
