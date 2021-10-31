@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build-job:
     docker:
-      - image: node:latest
+      - image: node:stable
     working_directory: ~/repo
     steps:
       - checkout
@@ -10,7 +10,7 @@ jobs:
       - run: npm run build
   deploy-job:
     docker:
-      - image: node:latest
+      - image: node:stable
     working_directory: ~/repo
     steps:
       - checkout
@@ -23,7 +23,6 @@ workflows:
     jobs:
       - build-job
       - deploy-job:
-          ssh-fingerprints: "92:61:c7:62:9b:e6:40:0f:9f:91:a3:69:08:19:72:fe"
           requires:
             - build-job
           filters:
